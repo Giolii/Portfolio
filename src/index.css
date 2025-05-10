@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "happy";
+  src: url("/fonts/happy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "conq";
+  src: url("/fonts/conq.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "paul";
+  src: url("/fonts/paul.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "point";
+  src: url("/fonts/point.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.happy {
+  font-family: "Happy", sans-serif;
+}
+.koni {
+  font-family: "conq", sans-serif;
+}
+.paul {
+  font-family: "paul", sans-serif;
+}
+.point {
+  font-family: "point", sans-serif;
+}
