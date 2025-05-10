@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Dices, Github } from "lucide-react";
 
 // Reusable hook for detecting when an element is visible in the viewport
 const useIntersectionObserver = (options = {}) => {
@@ -135,6 +136,7 @@ const ProjectCard = ({ project, index }) => {
         {/* Card background with gradient */}
         <div className="bg-gradient-to-br from-indigo-900/90 via-purple-900/95 to-indigo-800/90 border border-white/10 backdrop-blur-sm">
           {/* Project image with shimmer effect */}
+
           <div className="relative overflow-hidden">
             <img
               src={projectData.image}
@@ -169,7 +171,7 @@ const ProjectCard = ({ project, index }) => {
           <div className="p-6">
             {/* Title */}
             <h2
-              className="text-2xl font-bold mb-3 text-white"
+              className="ostr tracking-widest text-2xl font-bold mb-3 text-white"
               style={{
                 transform: `translateZ(30px)`,
                 transition: "transform 0.3s ease-out",
@@ -210,48 +212,48 @@ const ProjectCard = ({ project, index }) => {
 
             {/* Links */}
             <div
-              className="flex gap-4 mt-4"
+              className="flex gap-4 mt-4 justify-around"
               style={{
                 transform: `translateZ(30px)`,
                 transition: "transform 0.3s ease-out",
               }}
             >
-              <button
+              <a
                 href={projectData.demoLink}
-                className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-medium rounded-lg hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-purple-900/50 hover:shadow-lg hover:shadow-purple-800/50 transition-all duration-300 flex items-center justify-center z-50"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-medium rounded-lg hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-purple-900/50 hover:shadow-lg hover:shadow-purple-800/50 transition-all duration-300 flex items-center justify-center"
                 style={{
                   transform: `translateZ(40px) scale(${isHovered ? 1.05 : 1})`,
                   transition: "transform 0.3s ease-out, shadow 0.3s ease-out",
                 }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.open(projectData.githubLink, "_blank");
-                }}
               >
+                <Dices className="mr-1" />
                 DEMO
-              </button>
+              </a>
               <a
                 href={projectData.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2 bg-black/30 text-white text-sm font-medium rounded-lg border border-white/10 hover:bg-black/40 hover:border-white/20 transition-all duration-300 flex items-center justify-center"
                 style={{
                   transform: `translateZ(40px) scale(${isHovered ? 1.05 : 1})`,
                   transition: "transform 0.3s ease-out",
                 }}
               >
-                GITHUB
+                <Github className="mr-1" /> GITHUB
               </a>
+              {/* Card edge highlight */}
+              <div
+                className="absolute inset-0 rounded-lg border border-white/20"
+                style={{
+                  opacity: isHovered ? 0.8 : 0.2,
+                  transition: "opacity 0.3s ease-out",
+                  pointerEvents: "none",
+                }}
+              />
             </div>
           </div>
-
-          {/* Card edge highlight */}
-          <div
-            className="absolute inset-0 rounded-lg border border-white/20"
-            style={{
-              opacity: isHovered ? 0.8 : 0.2,
-              transition: "opacity 0.3s ease-out",
-            }}
-          />
         </div>
       </div>
     </div>
@@ -273,23 +275,47 @@ const ProjectsShowcase = () => {
     {
       title: "Blue Eye Social",
       image: "/screenshots/blueeye.jpg",
-      demoLink: "https://github.com/Giolii/Blue_Eye",
-      githubLink: "https://blueeye-production.up.railway.app/",
-      techStack: ["React", "Node.js", "MongoDB", "Express"],
+      githubLink: "https://github.com/Giolii/Blue_Eye",
+      demoLink: "https://blueeye-production.up.railway.app/",
+      techStack: [
+        "React",
+        "Vite",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "Tailwind",
+        "WebSocket",
+        "Jest",
+      ],
     },
     {
       title: "MSN WebChat",
       image: "/screenshots/MSN.jpg",
-      demoLink: "#",
-      githubLink: "#",
-      techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      demoLink: "https://msnfront-production.up.railway.app/",
+      githubLink: "https://github.com/Giolii/MSN_front",
+      techStack: [
+        "React",
+        "Vite",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "Tailwind",
+        "Framer Motion",
+      ],
     },
     {
-      title: "My Blog as a Admin ",
+      title: "Blog Admin ",
       image: "/screenshots/blog.jpg",
-      demoLink: "#",
-      githubLink: "#",
-      techStack: ["React", "Firebase", "Material UI"],
+      demoLink: "https://myblogadmin-production.up.railway.app/",
+      githubLink: "https://github.com/Giolii/MyBlog_Admin",
+      techStack: [
+        "React",
+        "Vite",
+        "Node.js",
+        "PostgreSQL",
+        "Express",
+        "Tailwind",
+      ],
     },
   ];
 
@@ -356,7 +382,7 @@ const ProjectsShowcase = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}

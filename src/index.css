@@ -27,6 +27,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "ostr";
+  src: url("/fonts/ostr.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .happy {
   font-family: "Happy", sans-serif;
@@ -39,4 +45,10 @@
 }
 .point {
   font-family: "point", sans-serif;
+}
+.conq {
+  font-family: "conq", sans-serif;
+}
+.ostr {
+  font-family: "ostr", sans-serif;
 }
