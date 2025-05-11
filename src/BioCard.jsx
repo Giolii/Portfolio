@@ -115,7 +115,7 @@ const BioCard = () => {
         {/* Decorative background elements */}
         <div className="mb-16 text-center relative">
           <h2
-            className=" w-full  text-center happy p-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-purple-200 inline-block"
+            className="conq w-full  text-center  p-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-purple-200 inline-block"
             style={{
               opacity: isTextVisible ? 1 : 0,
               transform: `translateY(${isTextVisible ? 0 : -20}px)`,

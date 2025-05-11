@@ -174,7 +174,7 @@ const NameCard = () => {
             }}
           >
             <img
-              src="https://snworksceo.imgix.net/dpn/459b3d38-cee6-447e-9b33-a529ddc2d155.sized-1000x1000.jpg?w=1000"
+              src="/screenshots/profile.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />

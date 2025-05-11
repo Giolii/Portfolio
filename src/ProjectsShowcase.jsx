@@ -357,7 +357,7 @@ const ProjectsShowcase = () => {
         {/* Title section */}
         <div ref={titleRef} className="mb-16 text-center relative">
           <h2
-            className="happy p-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-purple-200 inline-block"
+            className="conq p-4 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 to-purple-200 inline-block"
             style={{
               opacity: titleVisible ? 1 : 0,
               transform: `translateY(${titleVisible ? 0 : -20}px)`,

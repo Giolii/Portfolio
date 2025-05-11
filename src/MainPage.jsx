@@ -13,15 +13,6 @@ const MainPage = () => {
 
       {/* <SkillsCard /> */}
 
-      {/* <div className="border-2 border-gray-400 p-2 flex flex-col justify-center items-center">
-        <div className="happy">Contact me</div>
-        <div className="flex w-full justify-around">
-          <div>Github</div>
-          <div>Email</div>
-          <div>linkedin</div>
-        </div>
-      </div> */}
-
       <ContactCard />
     </div>
   );
